@@ -1,0 +1,281 @@
+/*reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+body{
+  font-family:Arial,"STHeiti", Helvetica, sans-serif;
+  background:#fff;
+  font-size:14px;
+  height:100%;
+  max-width:750px;
+  min-width:20pc;
+  line-height:1.5;
+}
+table{
+  border-collapse:collapse;
+  border-spacing:0
+}
+fieldset, img{
+  border:0
+}
+legend{
+  display:none
+}
+address, caption, cite, code, dfn, em, strong, th, var{
+  font-style:normal;
+  font-weight:normal
+}
+ol, ul{
+  list-style:none
+}
+caption, th{
+  text-align:left
+}
+h1, h2, h3, h4, h5, h6{
+  font-size:100%;
+  font-weight:normal
+}
+q:before, q:after{
+  content:''
+}
+abbr, acronym{
+  border:0
+}
+html{-webkit-text-size-adjust:none;width:100%;height:100% } /*????iphone??safari????????????*/
+input[type="text"], input[type="button"], input[type="submit"], input[type="search"]{
+  -webkit-appearance:none;
+  border-radius:0;
+}
+
+html, body { position: relative;}
+
+/******************正文***********************/
+.page-box{
+  width:100%;
+  height:100%;
+  overflow: hidden;
+  position: relative;
+}
+.load-page{
+  width:100%;
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: 999;
+  background-image:url(../img/bg.png);
+  .img-load-now{
+    width:100%;
+    height:100%;
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-container-v {
+  background: #eee;
+}
+
+ul{
+  list-style: none;
+}
+input,select{
+  border:0;
+  outline:none;
+}
+
+
+.userInfo{
+  text-align: left;
+  display:none;
+  background:rgba(0,0,0,0.6);
+  width:100%;
+  height:100%;
+  box-sizing:border-box;
+  position: absolute;
+  left:0;
+  bottom:0;
+}
+.userInfo-box{
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  width:100%;
+  height:100%;
+  background:#fff;
+  padding:45/75rem 74/75rem;
+  position: absolute;
+  left:0;
+  top:0;
+  .input-title{
+    color:#fff;
+    background:#2b69b6;
+    font-size: 39/75rem;
+    padding-left:44/75rem;
+    font-family: '方正兰亭黑简体';
+    font-style: italic;
+    -webkit-clip-path: polygon(2% 0%, 100% 0%, 98% 100%, 0% 100%);
+    clip-path: polygon(2% 0%, 100% 0%, 98% 100%, 0% 100%);
+    margin-bottom:10/75rem;
+    span{
+      font-size: 46/75rem;
+    }
+  }
+  .userInfo-title{
+    width:116/75rem;
+    color:#001c58;
+    font-size:28/75rem;
+    padding-bottom:4/75rem;
+    margin-bottom:6/75rem;
+    border:1px solid transparent;
+    border-bottom: 1px solid #A0A0A0;
+  }
+  .userInfo-tip{
+    font-size:18/75rem;
+    margin-bottom:20/75rem;
+  }
+  .input-form {
+    box-sizing: border-box;
+    width: 100%;
+    //float: left;
+    li.red {
+      border: 1px solid #c01c1c;
+      -webkit-box-shadow: 0 0 2px #c01c1c;
+      -moz-box-shadow: 0 0 2px #c01c1c;
+      box-shadow: 0 0 2px #c01c1c;
+    }
+    li {
+      box-sizing: border-box;
+      border: 1px solid #A0A0A0;
+      //border-radius: 3px;
+      width: 100%;
+      height: 50/75rem;
+      margin-bottom: 16/75rem;
+      font-size: 22/75rem;
+      position: relative;
+      //span.firstspan{border-radius: 1px 0 0 1px}
+      span {
+        color: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 111/75rem;
+        height: 48/75rem;
+        line-height: 48/75rem;
+        text-align: center;
+        background: #2b69b6;
+      }
+      input {
+        padding-left: 114/75rem;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+
+      }
+      select {
+        float: right;
+        -webkit-padding-left: 114/75rem;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        width: 366/75rem;
+        height: 100%;
+        background: transparent;
+        border-radius: 0;
+      }
+    }
+    li.province-city {
+      border: 0;
+      width:100%;
+      select.ddlProvince {
+        float: left;
+        box-sizing: border-box;
+        width: 290/75rem;
+        //margin-right: 10/75rem;
+        height: 50/75rem;
+        border: 1px solid #A0A0A0;
+      }
+      select.ddlCity {
+        float: right;
+        box-sizing: border-box;
+        width: 290/75rem;
+        height: 50/75rem;
+        border: 1px solid #A0A0A0;
+      }
+    }
+    li.province-city:after {
+      content: '';
+      display: none;
+      clear: both;
+    }
+  }
+  .btn-userInfo{
+    box-sizing:border-box;
+    float:right;
+    width:609/75rem;
+    margin-top:23/75rem;
+    height:50/75rem;
+    line-height: 50/75rem;
+    //background:#3569B4;
+    //-webkit-clip-path: polygon(2% 0%, 100% 0%, 98% 100%, 0% 100%);
+    //clip-path: polygon(2% 0%, 100% 0%, 98% 100%, 0% 100%);
+    margin-bottom:23/75rem;
+    position: relative;
+    p{
+      position: absolute;
+      top:0;
+      right:114/75rem;
+      //margin-right:114/133.4rem;
+      width:396/75rem;
+      height:100%;
+      color:#336fb9;
+      font-size:26/75rem;
+      text-align: center;
+      border: solid #336fb9 1.5px;
+    }
+  }
+  a#rule-icon{
+    //position: absolute;
+    float:right;
+    text-align: right;
+    //right:0;
+    width:609/75rem;
+    font-size: 20/75rem;
+    color:#434343;
+    text-decoration:underline;
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>永昌票务h5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,shrink-to-fit=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/animate.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script>
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audioAutoPlay('musicStar');
+        }, false);
+    </script>
+</head>
+<body>
+<div id="page-box" class="page-box">
+    <div class="load-page" id="loadingPage">
+        <div class="img-load-now">
+            <!--加载动画-->
+            <div class="loading"></div>
+            <div class="mask"><span id="img-loading-txt">100</span></div>
+        </div>
+    </div>
+    <div class="swiper-container" id="swiperBox" >
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background:#f00;">
+                <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容1</p>
+            </div>
+            <div class="swiper-slide" style="background:#0f0;">
+                <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容2</p>
+            </div>
+            <div class="swiper-slide" style="background:#00f;">
+                <div  class="userInfo-box" >
+                    <div class="input-title"><i><span>好</span>礼相送！预约试驾</i></div>
+                    <p class="userInfo-title">我要参加</p>
+                    <p class="userInfo-tip">即日起至2017年4月21日，凡在线成功填写预约试驾表单的用户，即有机会赢取精美好礼一份！</p>
+                    <ul class="input-form">
+                        <li>
+                            <span class="firstspan">姓名</span>
+                            <input type="text" id="username" name="username" placeholder="姓名"  maxlength=10 minlength=2 required="required" />
+                        </li>
+                        <li>
+                            <span class="firstspan">手机</span>
+                            <input type="tel" id="phone" name="phone" placeholder="手机" required="required" />
+                        </li>
+                        <li>
+                            <span>试驾车型</span>
+                            <select name="cartype" id="cartype">
+                                <option value="-1">选择车型</option>
+                                <option value="61">4008</option>
+                                <option value="62">3008</option>
+                                <option value="63">2008</option>
+                            </select>
+                        </li>
+                        <li class="province-city">
+                            <select id="ddlProvince" name="ddlProvince" class="ddlProvince" title="省/00" >
+                                <option value="-1">选择省份</option>
+                            </select>
+                            <select id="ddlCity" name="ddlCity" class="ddlCity">
+                                <option value="-1">选择城市</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span>经销商</span>
+                            <select id="agency" name="agency"  >
+                                <option value="-1">经销商</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <div class="btn-userInfo"><p  id="btn-userInfo" >提&nbsp;&nbsp;&nbsp;交</p></div>
+                    <a id="rule-icon" >发奖及售后说明</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/swiper.animate1.0.2.min.js"></script>
+<script src="js/init.js"></script>
+<!--<script src="js/province.js"></script>-->
+<!--<script src="js/style.js"></script>-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/wx_share.js"></script>
+<script>
+    function audioAutoPlay(id){
+        var audio = document.getElementById(id),
+                play = function(){
+                    audio.play();
+                    document.removeEventListener("touchstart",play, false);
+                };
+        audio.play();
+        document.addEventListener("touchstart",play, false);
+    }
+    var isAppInside=/micromessenger/i.test(navigator.userAgent.toLowerCase())||/yixin/i.test(navigator.userAgent.toLowerCase());
+
+    var mySwiper = new Swiper('.swiper-container',{
+        direction:'vertical',
+        onInit:function(swiper){
+            swiperAnimateCache(swiper);
+            swiperAnimate(swiper);
+        },
+        onSlideChangeEnd:function(swiper){
+            swiperAnimate(swiper);
+        }
+    });
+    $(function(){
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        $('body').css({'width':w,'height':h});
+        $('.swiper-slide').css({'width':w,'height':h});
+    })
+</script>
+</body>
+</html>
