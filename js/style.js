@@ -48,6 +48,9 @@ var SaveInfo = {
                 }
             })
         });
+        $('select').change(function(){
+            $(this).addClass('changed');
+        })
     },
     clickReg:function(){
         var usernameReg = false,phoneReg = false,provinceReg = false,cityReg = false,agencyReg = false,cartypeReg = false;
@@ -129,7 +132,7 @@ var SaveInfo = {
                                             $('#prizeResult p').html('2个月以内我们会与您电话沟通，请保持电话通畅；奖品会在随后发放');
                                         } else {
                                             $('#prizeResult h1').addClass('notGet').removeClass('get');
-                                            $('#prizeResult h1 i').html('感谢您参与东风标致X008 SUV盛会活动！');
+                                            $('#prizeResult h1 i').html('感谢您参与东风标致X008 SUV盛会活动');
                                             $('#prizeResult p').html('');
                                         }
                                         $('#prizeResult').unbind('click').bind('click',function () {
@@ -153,3 +156,102 @@ var SaveInfo = {
         });
     }
 };
+$(function(){
+
+    var imgFile = ['./img/bg.png','./img/bg01.jpg','./img/bg02.jpg','./img/bg03.jpg','./img/bg04.jpg'];
+    ImgLoadingByFile(imgFile,'page01','loadingPage','img-loading-txt');
+
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    $('body').css({'width':w,'height':h});
+    //活动详情
+    $('#rule-icon').click(function(e){
+        e.preventDefault();
+        $('#actionRules').show();
+    });
+    $('#actionRules').click(function(){
+        $('#actionRules').hide();
+    });
+
+    //自动播放音乐
+    var firstTouch = true;
+    $('body').bind("touchstart",function(e){
+        if ( firstTouch ) {
+            firstTouch = false;
+            musicStar.play();
+        }else{
+            return;
+        }
+    });
+    //动画开始播放音乐
+    musicStar.load();
+    musicStar.src="video/Echo.mp3";
+    musicStar.play();
+    $(".open").click(function(){
+        musicStar.pause();
+        $(this).css("display","none");
+        $(".clock").css("display","block");
+        $('.btn-music').removeClass('open-music');
+    });
+    $(".clock").click(function(){
+        musicStar.play();
+        $(this).css("display","none");
+        $(".open").css("display","block");
+        $('.btn-music').addClass('open-music');
+    });
+    ProvinceData.init('ddlProvince','ddlCity','agency');
+    SaveInfo.init();
+    $('#next-btn').click(function(){
+        $('#ending').show();
+    });
+
+
+    function puzzleStart(moveID,puzzleID){
+        $('#'+moveID).bind('touchmove',function(e){
+            e.preventDefault();
+            var touch = e.originalEvent.targetTouches[0];
+            var x = touch.pageX;
+            var y = touch.pageY;
+            var w = parseFloat($(this).css('width'));
+            var h = parseFloat($(this).css('height'));
+            var windowW = window.innerWidth;
+            var windowH = window.innerHeight;
+            console.log(x,y,w,h,windowW,windowH);
+            var puzzleX = parseFloat($('#'+puzzleID).css('left'));
+            var puzzleY = parseFloat($('#'+puzzleID).css('top'));
+            var puzzleW = parseFloat($('#'+puzzleID).css('width'));
+            var puzzleH = parseFloat($('#'+puzzleID).css('height'));
+
+            if(x<=(puzzleX+puzzleW)&&x>=(puzzleX-puzzleW)&&y<=(puzzleY+puzzleH)&&y>=(puzzleY-puzzleH)){
+                console.log(555);
+                $(this).css({'left':puzzleX,'top':puzzleY});
+                total++;
+                if(total==2){
+                    $('#ending').fadeIn();
+                }
+                $(this).unbind('touchmove');
+            }else{
+                if(x>windowW-w){
+                    $(this).css({'left':windowW-w});
+                }else if(x<0){
+                    $(this).css({'left':0});
+                }else{
+                    $(this).css({'left':x});
+                }
+
+                if(y>windowH-h){
+                    $(this).css({'top':windowH-h});
+                }else if(y<0){
+                    $(this).css({'top':0});
+                }else{
+                    $(this).css({'top':y});
+                }
+            }
+            //console.log(x,y,puzzleX,puzzleY,puzzleW,puzzleH,puzzleX+puzzleW+10,puzzleX-puzzleW-10,puzzleY+puzzleH+10,puzzleY-puzzleH-10);
+        });
+    }
+    var total = 0;
+    puzzleStart('moveicon01','puzzle');
+    puzzleStart('moveicon02','puzzle');
+
+});

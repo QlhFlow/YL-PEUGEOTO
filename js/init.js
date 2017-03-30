@@ -8,47 +8,26 @@ function funImgLoading(containID,txtID,fnComplete) {
     var box = document.getElementById(containID);
     var domTag = box.getElementsByTagName("*");
     var domLen = domTag.length;
-
     var imgLoadedNum = 0;
-
     var imgAllNum = 0;
-
     var loadDiv = document.getElementById(txtID);
-
     for(var i = 0; i < domLen; i++) {
         var thisDom = domTag[i];
-
         var imgUrl = window.getComputedStyle(thisDom).getPropertyValue("background-image");
-
-
         var imgNewUrl = imgUrl.match(/[^url\("'](.+)[^'"\)]/g);
-
-
         if(imgNewUrl[0].indexOf("/") != -1) {
-
             imgAllNum++;
-
             var imgNewUrlStr = imgNewUrl[0];
-
             var bgimgElement = document.createElement("img");
             bgimgElement.setAttribute("src", imgNewUrlStr);
-
             bgimgElement.addEventListener("load", funLoad);
-
-        }
-
-        else if(thisDom.tagName == "IMG") {
-
+        } else if(thisDom.tagName == "IMG") {
             imgAllNum++;
-
             if(thisDom.complete){
-
                 ++imgLoadedNum;
             }else{
-
                 thisDom.addEventListener("load", funLoad);
             }
-
         }
     }
 
@@ -69,15 +48,49 @@ function funImgLoading(containID,txtID,fnComplete) {
     }
 }
 
+//
+//funImgLoading("page-box","img-loading-txt",function(){
+//    //var loadingPage = document.getElementById("loadingPage");
+//    if(sessionStorage.getItem("pageloaded")){
+//        //loadingPage.style.display = "none";
+//        $('#loadingPage').css('display','none');
+//        $('#swiperBox').fadeIn();
+//    }
+//});
 
-funImgLoading("page-box","img-loading-txt",function(){
-    //var loadingPage = document.getElementById("loadingPage");
+
+function ImgLoadingByFile(imgArray,innerPageID,loadPageID,loadTxtID){
     if(sessionStorage.getItem("pageloaded")){
-        //loadingPage.style.display = "none";
-        $('#loadingPage').css('display','none');
-        $('#swiperBox').fadeIn();
+        $('#'+loadTxtID).html('100%');
+        $('#'+loadPageID).hide();
+        $('#'+innerPageID).fadeIn();
+    }else{
+        var imgLoad = 0;
+        if(imgArray.length>0){
+            var imgTotal = imgArray.length;
+            var percent = 0;
+            for(var i = 0;i<imgArray.length;i++){
+                var img = new Image();
+                console.log(''+imgArray[i]);
+                img.src=imgArray[i];
+                img.onload = function(){
+                    imgLoad++;
+                    percent = parseInt(imgLoad/imgTotal*100);
+                    $('#'+loadTxtID).html(percent+'%');
+                    if(percent>=100){
+                        if(percent >= 100) {
+                            $('#'+loadPageID).hide();
+                            $('#'+innerPageID).fadeIn();
+                            sessionStorage.setItem("pageloaded", "true");
+                        }
+                    }
+                }
+            }
+        }
     }
-});
+}
+
+
 /******rem *******/
 (function(win){
     var remCalc = {};
