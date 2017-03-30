@@ -2,15 +2,15 @@
  * Created by luhao on 2017/3/13.
  */
 (function ($){
-	var url = "http://h5.qlh520.top/weixin/jssdk/wx_token.php";
+	var url = "https://h5.xingyuanauto.com/weixin_serve/jssdk/wx_token.php";
 	$.post(url,function(msg){
 		if(msg.start == 0){ 
           return alert(msg.message);
         }
 			var title ='玩出快乐3招新境界,GO!'; // 分享标题
-            var link ='http://h5.xingyuanauto.com/Dongbiao/index.php';
+            var link ='https://h5.xingyuanauto.com/Dongbiao/DbYongle/index.php';//分享链接
             var desc = '东风标致X008 SUV盛会 GO'; // 分享描述
-            var imgUrl = 'http://h5.xingyuanauto.com/Dongbiao/img/111.png';
+            var imgUrl = 'https://h5.xingyuanauto.com/Dongbiao/DbYongle/img/arrow.png';//分享图片
 		
 		    var wx_appId = msg.appId; 
 			var wx_timestamp = msg.timestamp;
