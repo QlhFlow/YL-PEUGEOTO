@@ -15,5 +15,5 @@ shuffle($arr); //打乱数组顺序
 $arrstr = implode("-",$arr); 
 $str = $aes->encrypt($arrstr);//加密
 echo '<input type="hidden" name="key" value="'.$str.'" />';
-include("./index.html");
+include("./index-pre.html");
 ?>
