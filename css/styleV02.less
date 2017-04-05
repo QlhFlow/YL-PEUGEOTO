@@ -25,6 +25,7 @@ body{
   max-width:750px;
   min-width:20pc;
   line-height:1.5;
+  -webkit-tap-highlight-color: transparent;
 }
 table{
   border-collapse:collapse;
@@ -70,6 +71,7 @@ html, body { position: relative;color:#333;}
   height:100%;
   overflow: hidden;
   position: relative;
+  background:#fff;
 }
 .load-page{
   width:100%;
@@ -78,15 +80,31 @@ html, body { position: relative;color:#333;}
   left:0;
   top:0;
   z-index: 999;
-  background-image:url(../img/bg.png);
+  background-color:#fff;
   .img-load-now{
-    width:100%;
-    height:100%;
+    width:142/75rem;
+    height:200/75rem;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    text-align: center;
+    .loading{
+      background-image:url(../img/loading.gif);
+      background-size: 142/75rem 143/75rem;
+      width:142/75rem;
+      height:143/75rem;
+      margin-bottom: 20/75rem;
+    }
+    span{
+      font-size: 22/75rem;
+    }
   }
 }
 /**音乐播放**/
-.btn-music{width: 67/75rem; height: 67/75rem;position: absolute; top:117/75rem; right: 59/75rem;z-index: 999;display: none}
-.open-music{animation: music-btn 3s linear infinite; -webkit-animation: music-btn 3s linear infinite;}
+.btn-music{width: 66/75rem; height: 66/75rem;background:rgba(0,0,0,0.3);border-radius:50%;position: absolute; top:114/75rem; right: 36/75rem;z-index: 999;}
+//.open-music{animation: music-btn 3s linear infinite; -webkit-animation: music-btn 3s linear infinite;}
 .music{width:100%; height: 100%;}
 @-webkit-keyframes music-btn{
   form{
@@ -212,17 +230,6 @@ input,select{
       select.changed{
         color:#333;
       }
-      //em{
-      //  background-image:url(../img/select-icon.png);
-      //  background-size: 16/75rem 12/75rem;
-      //  width:16/75rem;
-      //  height:12/75rem;
-      //  position: absolute;
-      //  right:14/75rem;
-      //  top:50%;
-      //  transform: translate(-50%,-50%);
-      //  -webkit-transform: translate(-50%,-50%);
-      //}
     }
     li.province-city {
       border: 0;
@@ -395,36 +402,299 @@ input,select{
 
 /*****拼图页面******/
 .page01{
-  width:100%;
-  height:100%;
+  width:599/75rem;
+  height:1120/75rem;
   position: absolute;
-  left:0;
-  top:0;
-  .puzzle{
-    width:67/75rem;
-    height:67/75rem;
-    background-image: url(../img/music-close.png);
-    background-size: 67/75rem 67/75rem;
-    position: absolute;
-    left:300/75rem;
-    top:0;
-  }
-  .record03{
-    background-image: url(../img/music-open.png);
-    background-size: 67/75rem 67/75rem;
-    width:67/75rem;
-    height:67/75rem;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  margin-top: 23/75rem;
+  .page-title{
+    width:219/75rem;
+    height:64/75rem;
     position: absolute;
     left:50%;
-    bottom:50/75rem;
+    top:0;
+    transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
+    overflow: hidden;
+    em{
+      width:2/75rem;
+      height:64/75rem;
+      position: absolute;
+      left:253/75rem;
+      top:0;
+      background:#626365;
+    }
+    .page01-title01{
+      width:219/75rem;
+      height:64/75rem;
+      position: absolute;
+      left:0;
+      top:0;
+    }
+    .page01-title{
+      width:202/75rem;
+      height:64/75rem;
+      position: absolute;
+      left:274/75rem;
+      top:0;
+    }
+    .page01-title03,.page01-title04{
+      opacity: 0;
+      transition: all 0.5s  ease;
+      -webkit-transition: all 0.5s ease;
+    }
+    .title-show{
+      opacity: 1;
+
+    }
   }
-  .record04{
-    background-image: url(../img/music-open.png);
-    background-size: 67/75rem 67/75rem;
-    width:67/75rem;
-    height:67/75rem;
+  .move-title{
+    width:482/75rem;
+    transition: all 0.5s 0.5s ease-out;
+  }
+  .bottom-title{
+    text-align: center;
+    width:100%;
+    height:68/75rem;
     position: absolute;
-    left:80%;
-    bottom:300/75rem;
+    left:0;
+    bottom:74/75rem;
+    h2{
+      font-size: 28/75rem;
+      font-weight: 600;
+    }
+    p{
+      font-size: 24/75rem;
+      font-weight: normal;
+    }
+  }
+  .hand{
+    width:42/75rem;
+    height:59/75rem;
+    position: absolute;
+    left:278.5/75rem;
+    bottom:0;
+    animation: handmove 1s ease 0s infinite;
+    -webkit-animation: handmove 1s ease 0s infinite;
+  }
+  @keyframes handmove {
+    0% {
+      -webkit-transform:translateX(0) translateY(0);
+      transform:translateX(0) translateY(0);
+    }
+    100% {
+      -webkit-transform:translateX(0) translateY(20/75rem);
+      transform:translateX(0) translateY(20/75rem);
+    }
+  }
+  @-webkit-keyframes handmove {
+    0% {
+      -webkit-transform:translateX(0) translateY(0);
+      transform:translateX(0) translateY(0);
+    }
+    100% {
+      -webkit-transform:translateX(0) translateY(20/75rem);
+      transform:translateX(0) translateY(20/75rem);
+    }
+  }
+  .bgpuzzle{
+    width:569/75rem;
+    height:596/75rem;
+    position: absolute;
+    left:50%;
+    top:120/75rem;
+    transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
+  }
+  //可拖动的小块
+  .record01{
+    width:147/75rem;
+    height:114/75rem;
+    position: absolute;
+    left:33/75rem;
+    top:790/75rem;
+  }
+  .record02{
+    width:147/75rem;
+    height:114/75rem;
+    position: absolute;
+    left:226/75rem;
+    top:790/75rem;
+  }
+  .record03{
+    width:147/75rem;
+    height:114/75rem;
+    position: absolute;
+    right:33/75rem;
+    top:790/75rem;
+  }
+  //白色遮罩小块
+  .b-bg01{
+    width:45/75rem;
+    height:34/75rem;
+    position: absolute;
+    left:404/75rem;
+    top:299/75rem;
+  }
+  .b-bg02{
+    width:45/75rem;
+    height:34/75rem;
+    position: absolute;
+    left:260/75rem;
+    top:382/75rem;
+  }
+  .b-bg03{
+    width:45/75rem;
+    height:34/75rem;
+    position: absolute;
+    left:148/75rem;
+    top:555/75rem;
+  }
+  //装饰白块
+  .p-left-01{
+    width:55/75rem;
+    height:53/75rem;
+    position: absolute;
+    left:70/75rem;
+    top:160/75rem;
+  }
+  .p-left-02{
+    width:55/75rem;
+    height:54/75rem;
+    position: absolute;
+    left:126/75rem;
+    top:193/75rem;
+  }
+  .p-left-no01{
+    width:48/75rem;
+    height:37/75rem;
+    position: absolute;
+    left:83/75rem;
+    top:208/75rem;
+  }
+  .p-left-no02{
+    width:48/75rem;
+    height:37/75rem;
+    position: absolute;
+    left:112/75rem;
+    top:238/75rem;
+  }
+  .p-right-no01{
+    width:34/75rem;
+    height:45/75rem;
+    position: absolute;
+    left:468/75rem;
+    top:611/75rem;
+  }
+  .p-right-01{
+    width:57/75rem;
+    height:49/75rem;
+    position: absolute;
+    left:492/75rem;
+    top:645/75rem;
+  }
+  //结束动画
+  .left01{
+    animation: left01 1.2s 0.8s ease-in forwards;
+    -webkit-animation: left01 1.2s 0.8s ease-in forwards;
+  }
+  .left02{
+    animation: left02 1.2s 0.8s ease-in forwards;
+    -webkit-animation: left02 1.5s 0.8s ease-in forwards;
+  }
+  .right01{
+    animation: right01 1.2s 0.8s ease-in forwards;
+    -webkit-animation: right01 1.2s 0.8s ease-in forwards;
+  }
+  @keyframes left01 {
+    0%{
+      left:70/75rem;
+      top:160/75rem;
+      opacity: 1;
+    }
+    40%{
+      opacity: 1;
+    }
+    60%{
+      left:108/75rem;
+      top:238/75rem;
+      transform: rotateZ(-35deg);
+      -webkit-transform: rotateZ(-35deg);
+      //opacity: 0.8;
+    }
+    100%{
+      opacity: 0;
+      left:108/75rem;
+      top:238/75rem;
+      transform: rotateZ(-35deg);
+      -webkit-transform: rotateZ(-35deg);
+    }
+  }
+  @keyframes left02 {
+    0%{
+      left:126/75rem;
+      top:193/75rem;
+      opacity: 1;
+    }
+    40%{
+      opacity: 1;
+    }
+    60%{
+      left:80/75rem;
+      top:200/75rem;
+      transform: rotateZ(35deg);
+      -webkit-transform: rotateZ(35deg);
+      //opacity: 0.8;
+    }
+    100%{
+      opacity: 0;
+      left:80/75rem;
+      top:200/75rem;
+      transform: rotateZ(35deg);
+      -webkit-transform: rotateZ(35deg);
+    }
+  }
+  @keyframes right01 {
+    0%{
+      left:492/75rem;
+      top:645/75rem;
+      opacity: 1;
+    }
+    40%{
+      opacity: 1;
+    }
+    60%{
+      left:452/75rem;
+      top:612/75rem;
+      transform: rotateZ(60deg);
+      -webkit-transform: rotateZ(60deg);
+      //opacity: 0.8;
+    }
+    100%{
+      opacity: 0;
+      left:452/75rem;
+      top:612/75rem;
+      transform: rotateZ(60deg);
+      -webkit-transform: rotateZ(60deg);
+    }
+  }
+}
+
+/****canvas动画****/
+#animation_container {
+  position:absolute;
+  margin:auto;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  display: none;
+  #canvas{
+    position:absolute;
+    left:0;
+    top:0;
   }
 }

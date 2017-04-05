@@ -1,12 +1,13 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>永昌票务h5</title>
-    <meta name="description" content="东风标致X008 盛会" />
+    <title>奏响X乐章 开启美好生活</title>
+    <meta name="description" content="东风标致X008盛会 福利由你开启" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,shrink-to-fit=no">
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
     <link rel="stylesheet" href="css/styleV02.css"/>
     <script>
         document.addEventListener("WeixinJSBridgeReady", function () {
@@ -15,20 +16,46 @@
     </script>
 </head>
 <body>
-<img src="img/record02.png" style="width:0;height:0;" />
+<img src="img/share-icon.jpg" style="width:0;height:0;position: absolute;left:0;top:0;" />
 <div id="page-box" class="page-box">
-    <div class="load-page" id="loadingPage">
-        <div class="img-load-now">
-            <!--加载动画-->
-            <div class="loading"></div>
-            <div class="mask"><span id="img-loading-txt">100</span></div>
+    <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); ">
+        <canvas id="canvas" width="" height="" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+        <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:750px; height:1206px; position: absolute; left: 0px; top: 0px; display: block;">
         </div>
     </div>
     <div class="page01" id="page01">
-        <div class="puzzle" id="puzzle"></div>
-        <div class="record03" id="moveicon01"></div>
-        <div class="record04" id="moveicon02"></div>
-        <button id="next-btn">下一页</button>
+        <!--上面文字-->
+        <div class="page-title" id="page-title">
+            <img src="img/text.png" class="page01-title01" alt=""/>
+            <em></em>
+            <img src="img/text001.png" class="page01-title02 page01-title" alt=""/>
+            <img src="img/text002.png" class="page01-title03 page01-title" alt=""/>
+            <img src="img/text003.png" class="page01-title04 page01-title" alt=""/>
+        </div>
+        <!--大背景图-->
+        <img src="img/x-p.png" alt=""  class="bgpuzzle" id="bgpuzzle" />
+        <!--小装饰块-->
+        <img src="img/p-left-no01.png" class="p-left-no01" alt=""/>
+        <img src="img/p-left-no02.png" class="p-left-no02" alt=""/>
+        <img src="img/p-left-01.png" class="p-left-01" alt=""/>
+        <img src="img/p-left-02.png" class="p-left-02" alt=""/>
+        <img src="img/p-right-no01.png" class="p-right-no01" alt=""/>
+        <img src="img/p-right-01.png" class="p-right-01" alt=""/>
+        <!--小块白色遮罩-->
+        <img src="img/b-bg01.png" class="b-bg01" id="puzzle01" alt=""/>
+        <img src="img/b-bg02.png" class="b-bg02" id="puzzle02" alt=""/>
+        <img src="img/b-bg03.png" class="b-bg03" id="puzzle03" alt=""/>
+        <!--可拖动小块-->
+        <img src="img/p-big-01.png" class="record01" id="moveicon01"/>
+        <img src="img/p-big-02.png" class="record02" id="moveicon02"/>
+        <img src="img/p-big-03.png" class="record03" id="moveicon03"/>
+        <!--底部文字-->
+        <div class="bottom-title" id="bottom-title">
+            <h2>向上拖拽完成拼图</h2>
+            <p>美好乐章将为你唱响</p>
+        </div>
+        <!--小手-->
+        <img src="img/hand.png" class="hand" alt=""/>
     </div>
     <div class="ending" id="ending">
         <div  class="userInfo-box" >
@@ -65,7 +92,7 @@
                 <li>
                     <span>经销商</span>
                     <select id="agency" name="agency" >
-                        <option value="-1">经销商</option>
+                        <option value="-1">选择经销商</option>
                     </select>
                 </li>
             </ul>
@@ -100,11 +127,21 @@
         <img src="img/music-open.png" class="open music" style="display: block;"/>
         <img src="img/music-close.png" class="clock music" style="display: none;"/>
     </div>
+    <div class="load-page" id="loadingPage">
+        <div class="img-load-now">
+            <!--加载动画-->
+            <div class="loading"></div>
+            <div class="mask"><span id="img-loading-txt"></span></div>
+        </div>
+    </div>
 </div>
 <!--音乐-->
 <audio src="video/Echo.mp3" id="musicStar"  loop="loop" preload="load" autoplay="autoplay"></audio>
 <script src="js/jquery-1.8.3.min.js"></script>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="js/yongle.js"></script>
 <script src="js/init.js"></script>
+<script src="js/city_dealer.js"></script>
 <script src="js/province.js"></script>
 <script src="js/style.js"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>

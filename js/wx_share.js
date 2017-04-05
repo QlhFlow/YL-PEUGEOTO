@@ -2,15 +2,15 @@
  * Created by luhao on 2017/3/13.
  */
 (function ($){
-	var url = "https://h5.xingyuanauto.com/weixin_serve/jssdk/wx_token.php";
+	var url = "http://h5.qlh520.top/weixin/jssdk/wx_token.php";
 	$.post(url,function(msg){
 		if(msg.start == 0){ 
           return alert(msg.message);
         }
-			var title ='东标-永昌票务h5'; // 分享标题
-            var link ='https://h5.xingyuanauto.com/Dongbiao/DbYongle/index.php';//分享链接
-            var desc = '东风标致X008 SUV盛会 GO'; // 分享描述
-            var imgUrl = 'https://h5.xingyuanauto.com/Dongbiao/DbYongle/img/share-icon.png';//分享图片
+			var title ='奏响X乐章 开启美好生活'; // 分享标题
+            var link ='https://h5.xingyuanauto.com/Dongbiao/DbYongle/index.php';
+            var desc = '东风标致X008盛会 福利由你开启'; // 分享描述
+            var imgUrl = 'http://h5.xingyuanauto.com/Dongbiao/DbYongle/share-icon.png';
 		
 		    var wx_appId = msg.appId; 
 			var wx_timestamp = msg.timestamp;

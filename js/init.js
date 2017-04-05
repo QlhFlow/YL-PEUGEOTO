@@ -63,24 +63,28 @@ function ImgLoadingByFile(imgArray,innerPageID,loadPageID,loadTxtID){
     if(sessionStorage.getItem("pageloaded")){
         $('#'+loadTxtID).html('100%');
         $('#'+loadPageID).hide();
-        $('#'+innerPageID).fadeIn();
+        //$('#'+innerPageID).fadeIn();
     }else{
         var imgLoad = 0;
         if(imgArray.length>0){
             var imgTotal = imgArray.length;
             var percent = 0;
+            var img = [];
             for(var i = 0;i<imgArray.length;i++){
-                var img = new Image();
-                console.log(''+imgArray[i]);
-                img.src=imgArray[i];
-                img.onload = function(){
+                img[i] = new Image();
+                console.log(imgArray[i],img[i]);
+                img[i].src=imgArray[i];
+                img[i].onload = function(){
                     imgLoad++;
+
+                    //console.log(imgArray[i],img[i]);
                     percent = parseInt(imgLoad/imgTotal*100);
+                    //console.log(percent, $('#'+loadTxtID).html());
                     $('#'+loadTxtID).html(percent+'%');
                     if(percent>=100){
                         if(percent >= 100) {
                             $('#'+loadPageID).hide();
-                            $('#'+innerPageID).fadeIn();
+                            //$('#'+innerPageID).fadeIn();
                             sessionStorage.setItem("pageloaded", "true");
                         }
                     }

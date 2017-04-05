@@ -4,13 +4,14 @@
 var ProvinceData = {
     JSonData:'',
     init:function(provinceSelectID, citySelectID, agencyID){
-        $.ajax({
-            type:'get',
-            url:'http://fld.xingyuanauto.com/public/index.php/port/city/Dealer',
-            success:function(msg){
-                //console.log(msg);
-                JSonData = JSON.parse(msg);
+        //$.ajax({
+        //    type:'get',
+        //    url:'http://fld.xingyuanauto.com/public/index.php/port/city/Dealer',
+        //    success:function(msg){
+        //        //console.log(msg);
+        //        JSonData = JSON.parse(msg);
                 //console.log(JSonData);
+               ProvinceData.JSonData = Dealer;
                 if(provinceSelectID){
                     ProvinceData.BindProvince(provinceSelectID);
                 }
@@ -24,17 +25,17 @@ var ProvinceData = {
                         ProvinceData.BindAgency(provinceSelectID, citySelectID, agencyID);
                     })
                 }
-            }
-        });
+        //    }
+        //});
     },
     BindProvince:function(provinceSelectID){
-        if (JSonData && JSonData.length > 0) {
+        if (ProvinceData.JSonData && ProvinceData.JSonData.length > 0) {
             var masterObj = document.getElementById(provinceSelectID);
             if (masterObj && masterObj.options) {
                 masterObj.options.length = 0;
                 masterObj.options[0] = new Option("选择省份", -1);
-                for (var i = 0; i < JSonData.length; i++) {
-                    masterObj.options[masterObj.options.length] = new Option(JSonData[i].dealer_name, JSonData[i].dealer_id);
+                for (var i = 0; i < ProvinceData.JSonData.length; i++) {
+                    masterObj.options[masterObj.options.length] = new Option(ProvinceData.JSonData[i].dealer_name, ProvinceData.JSonData[i].dealer_id);
                 }
             }
         }
@@ -46,13 +47,13 @@ var ProvinceData = {
         console.log(masterObjid);
         if (masterObjid && masterObjid > 0) {
             var subAreaObj = document.getElementById(citySelectID);
-            console.log(subAreaObj);
+            //console.log(subAreaObj);
             subAreaObj.options.length = 0;
             subAreaObj.options[subAreaObj.options.length] = new Option("选择城市", -1);
-            for (var i = 0; i < JSonData.length; i++) {
-                if (JSonData[i].dealer_id == masterObjid) {
-                    for (var j = 0; j < JSonData[i].city.length; j++) {
-                        subAreaObj.options[subAreaObj.options.length] = new Option(JSonData[i].city[j].dealer_name, JSonData[i].city[j].dealer_id);
+            for (var i = 0; i < ProvinceData.JSonData.length; i++) {
+                if (ProvinceData.JSonData[i].dealer_id == masterObjid) {
+                    for (var j = 0; j < ProvinceData.JSonData[i].city.length; j++) {
+                        subAreaObj.options[subAreaObj.options.length] = new Option(ProvinceData.JSonData[i].city[j].dealer_name, ProvinceData.JSonData[i].city[j].dealer_id);
                     }
                 }
             }
@@ -75,9 +76,9 @@ var ProvinceData = {
             var subAreaObj = document.getElementById(agencyID);
             subAreaObj.options.length = 0;
             subAreaObj.options[subAreaObj.options.length] = new Option("选择经销商", -1);
-            for (var i = 0; i < JSonData.length; i++) {
-                if (JSonData[i].dealer_id == provinceId) {
-                    var t1 = JSonData[i];
+            for (var i = 0; i < ProvinceData.JSonData.length; i++) {
+                if (ProvinceData.JSonData[i].dealer_id == provinceId) {
+                    var t1 = ProvinceData.JSonData[i];
                     for (var j = 0; j < t1.city.length; j++) {
                         if (t1.city[j].dealer_id == cityId) {
                             var t2 = t1.city[j];
