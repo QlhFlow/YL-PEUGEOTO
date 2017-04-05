@@ -150,11 +150,14 @@ $(function(){
 
     var imgFile = [
         './images/_5yde.png',
-        './images/awq4radga.png',
-        './images/drydud.png',
+        './images/dfsdsf.png',
         './images/safaf.png',
-        './images/setxdge.png',
+        './images/sdfsdfs.png',
+        './images/sewtsgs.png',
+        './images/tgsgsg.png',
         './images/tugj.png',
+        './images/tygjfgj.png',
+        './images/wetetet.png',
         './img/b-bg01.png',
         './img/b-bg02.png',
         './img/b-bg03.png',
@@ -277,29 +280,25 @@ $(function(){
 
                 total++;
                 if(total==1){
-                    $('#page-title').addClass('move-title');
-
-                    $('#bottom-title h2').html('距离美好生活');
-                    $('#bottom-title p').html('还有最后2步啦~继续GO！');
 
                     var timer11 = setTimeout(function(){
+                        $('#page-title').addClass('move-title');
                         $('#bottom-title').hide();
+                        $('#bottom-title h2').html('距离美好生活');
+                        $('#bottom-title p').html('还有最后2步啦~继续GO！');
                         $('#bottom-title').fadeIn(500);
                         clearTimeout(timer11);
                     },500);
 
                 }else if(total==2){
-                    //$('.page01-title02').hide();
-                    //$('#bottom-title').hide();
-                    $('#bottom-title h2').html('惊喜即将呈现~');
-                    $('#bottom-title p').html('胜利在望，你真的好棒！');
-                    $('#bottom-title').fadeIn(500);
-                    //$('.page01-title03').addClass('title-show');
                     var timer12 = setTimeout(function(){
+
                         $('.page01-title02').hide();
                         $('#bottom-title').hide();
+                        $('#bottom-title h2').html('惊喜即将呈现~');
+                        $('#bottom-title p').html('胜利在望，你真的好棒！');
                         $('.page01-title03').addClass('title-show');
-                        $('#bottom-title').fadeIn(500);
+                        $('#bottom-title').fadeIn(1500);
                         clearTimeout(timer12);
                     },500);
                 }
@@ -308,8 +307,6 @@ $(function(){
                     $('.p-left-01').addClass('left01');
                     $('.p-left-02').addClass('left02');
                     $('.p-right-01').addClass('right01');
-                    //$('.page01-title04').addClass('title-show');
-
                     var timer13 = setTimeout(function(){
                         $('.page01-title03').hide();
                         $('.page01-title04').addClass('title-show');
@@ -317,17 +314,17 @@ $(function(){
                     },500);
 
                     var timer03 = setTimeout(function(){
-                        $('.p-left-no01').hide();
-                        $('.p-left-no02').hide();
-                        $('.p-right-no01').hide();
+                        $('.p-left-no01').fadeOut();
+                        $('.p-left-no02').fadeOut();
+                        $('.p-right-no01').fadeOut();
                         clearTimeout(timer03);
                         var timer02 = setTimeout(function(){
                             init();
-                            $('#animation_container').show();
-                            $('#page01').hide();
+                            $('#animation_container').fadeIn(800);
+                            $('#page01').fadeOut(800);
                             clearTimeout(timer02);
-                        },300);
-                    },1250);
+                        },720);
+                    },1280);
                 }
                 $(this).unbind('touchmove');
             }else{

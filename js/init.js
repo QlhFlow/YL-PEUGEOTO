@@ -81,6 +81,8 @@ function ImgLoadingByFile(imgArray,innerPageID,loadPageID,loadTxtID){
                     percent = parseInt(imgLoad/imgTotal*100);
                     //console.log(percent, $('#'+loadTxtID).html());
                     $('#'+loadTxtID).html(percent+'%');
+                    console.log(percent);
+                    console.log($('#'+loadTxtID).html());
                     if(percent>=100){
                         if(percent >= 100) {
                             $('#'+loadPageID).hide();

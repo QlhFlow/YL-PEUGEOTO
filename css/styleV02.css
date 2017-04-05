@@ -521,15 +521,15 @@ select {
 .page01 .page-title .page01-title03,
 .page01 .page-title .page01-title04 {
   opacity: 0;
-  transition: all 0.5s  ease;
-  -webkit-transition: all 0.5s ease;
+  transition: all 1.5s  ease;
+  -webkit-transition: all 1.5s ease;
 }
 .page01 .page-title .title-show {
   opacity: 1;
 }
 .page01 .move-title {
   width: 6.42666667rem;
-  transition: all 0.5s 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 .page01 .bottom-title {
   text-align: center;
@@ -675,7 +675,7 @@ select {
 }
 .page01 .left02 {
   animation: left02 1.2s 0.8s ease-in forwards;
-  -webkit-animation: left02 1.5s 0.8s ease-in forwards;
+  -webkit-animation: left02 1.2s 0.8s ease-in forwards;
 }
 .page01 .right01 {
   animation: right01 1.2s 0.8s ease-in forwards;
