@@ -147,8 +147,8 @@ var SaveInfo = {
     }
 };
 $(function(){
-
     var imgFile = [
+        './img/loading.gif',
         './images/_5yde.png',
         './images/dfsdsf.png',
         './images/safaf.png',
@@ -163,7 +163,6 @@ $(function(){
         './img/b-bg03.png',
         './img/close-icon.png',
         './img/hand.png',
-        './img/loading.gif',
         './img/music-close.png',
         './img/music-open.png',
         './img/p-big-01.png',

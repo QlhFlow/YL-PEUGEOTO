@@ -62,7 +62,11 @@ function funImgLoading(containID,txtID,fnComplete) {
 function ImgLoadingByFile(imgArray,innerPageID,loadPageID,loadTxtID){
     if(sessionStorage.getItem("pageloaded")){
         $('#'+loadTxtID).html('100%');
-        $('#'+loadPageID).hide();
+        var timer = setTimeout(function(){
+            $('#'+loadPageID).hide();
+            clearTimeout(timer);
+        },500);
+
         //$('#'+innerPageID).fadeIn();
     }else{
         var imgLoad = 0;
@@ -85,7 +89,10 @@ function ImgLoadingByFile(imgArray,innerPageID,loadPageID,loadTxtID){
                     console.log($('#'+loadTxtID).html());
                     if(percent>=100){
                         if(percent >= 100) {
-                            $('#'+loadPageID).hide();
+                            var timer = setTimeout(function(){
+                                $('#'+loadPageID).hide();
+                                clearTimeout(timer);
+                            },500);
                             //$('#'+innerPageID).fadeIn();
                             sessionStorage.setItem("pageloaded", "true");
                         }
