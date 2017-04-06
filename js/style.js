@@ -212,9 +212,12 @@ $(function(){
         }
     });
     //动画开始播放音乐
+    musicStar.src="video/spring.mp3";
     musicStar.load();
-    musicStar.src="video/Echo.mp3";
     musicStar.play();
+    var musicGame = $('#musicGame')[0];
+    musicGame.src='video/game02.mp3';
+    musicGame.load();
     $(".open").click(function(){
         musicStar.pause();
         $(this).css("display","none");
@@ -237,7 +240,7 @@ $(function(){
     });
 
     function puzzleStart(moveID,puzzleID){
-        $('#'+moveID).bind('touchmove',function(e){
+        $('#'+moveID).unbind('touchmove').bind('touchmove',function(e){
             e.preventDefault();
             var touch = e.originalEvent.targetTouches[0];
             var x = touch.pageX;
@@ -250,7 +253,7 @@ $(function(){
             var windowH = window.innerHeight;
             var lw =x-(windowW-bgw)/2;
             var lh =y-(windowH-bgh)/2;
-            //console.log(x,y,w,h,windowW,windowH);
+
             var puzzleX = parseFloat($('#'+puzzleID).css('left'));
             var puzzleY = parseFloat($('#'+puzzleID).css('top'));
             var puzzleW = parseFloat($('#'+puzzleID).css('width'));
@@ -267,19 +270,23 @@ $(function(){
                 $(this).attr('src','img/p-big-move-03.png');
             }
             $('.hand').fadeOut();
+            var musicGame = document.getElementById('musicGame');
             //lw<=(puzzleX+puzzleW+50)&&lw>=(puzzleX-puzzleW-50)&&lh<=(puzzleY+puzzleH+50)&&lh>=(puzzleY-puzzleH-50)
             if(lw<=(bgX+bgW)&&lw>=(bgX-bgW)&&lh<=(bgY+bgH)&&lh>=(bgY-bgH-50)){
-                //console.log(555);
                 $(this).css({'left':puzzleX,'top':puzzleY,'width':puzzleW,"height":puzzleH,"transition":'all 0.5s ease'});
                 var timer = setTimeout(function(){
                     $('#'+puzzleID).hide();
                     $('#'+moveID).hide();
                     clearTimeout(timer);
                 },500);
-
                 total++;
+                musicGame.volume=1;
+                musicGame.muted=false;
                 if(total==1){
-
+                    //gamePlay();
+                    if (musicGame.paused) { //判读是否播放
+                        musicGame.play();
+                    }
                     var timer11 = setTimeout(function(){
                         $('#page-title').addClass('move-title');
                         $('#bottom-title').hide();
@@ -288,8 +295,8 @@ $(function(){
                         $('#bottom-title').fadeIn(500);
                         clearTimeout(timer11);
                     },500);
-
                 }else if(total==2){
+                    musicGame.play();
                     var timer12 = setTimeout(function(){
 
                         $('.page01-title02').hide();
@@ -300,9 +307,8 @@ $(function(){
                         $('#bottom-title').fadeIn(1500);
                         clearTimeout(timer12);
                     },500);
-                }
-                if(total==3){
-
+                }else if(total==3){
+                    musicGame.play();
                     $('.p-left-01').addClass('left01');
                     $('.p-left-02').addClass('left02');
                     $('.p-right-01').addClass('right01');
@@ -311,7 +317,6 @@ $(function(){
                         $('.page01-title04').addClass('title-show');
                         clearTimeout(timer13);
                     },500);
-
                     var timer03 = setTimeout(function(){
                         $('.p-left-no01').fadeOut();
                         $('.p-left-no02').fadeOut();

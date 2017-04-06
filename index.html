@@ -45,10 +45,6 @@
         <img src="img/b-bg01.png" class="b-bg01" id="puzzle01" alt=""/>
         <img src="img/b-bg02.png" class="b-bg02" id="puzzle02" alt=""/>
         <img src="img/b-bg03.png" class="b-bg03" id="puzzle03" alt=""/>
-        <!--可拖动小块-->
-        <img src="img/p-big-01.png" class="record01" id="moveicon01"/>
-        <img src="img/p-big-02.png" class="record02" id="moveicon02"/>
-        <img src="img/p-big-03.png" class="record03" id="moveicon03"/>
         <!--底部文字-->
         <div class="bottom-title" id="bottom-title">
             <h2>向上拖拽完成拼图</h2>
@@ -56,6 +52,11 @@
         </div>
         <!--小手-->
         <img src="img/hand.png" class="hand" alt=""/>
+        <!--可拖动小块-->
+        <img src="img/p-big-01.png" class="record01" id="moveicon01"/>
+        <img src="img/p-big-02.png" class="record02" id="moveicon02"/>
+        <img src="img/p-big-03.png" class="record03" id="moveicon03"/>
+
     </div>
     <div class="ending" id="ending">
         <div  class="userInfo-box" >
@@ -136,7 +137,8 @@
     </div>
 </div>
 <!--音乐-->
-<audio src="video/Echo.mp3" id="musicStar"  loop="loop" preload="load" autoplay="autoplay"></audio>
+<audio src="video/spring.mp3" id="musicStar"  loop="loop" preload="auto" autoplay="autoplay"></audio>
+<audio src="video/game02.mp3" id="musicGame" preload="auto" ></audio>
 <script src="js/jquery-1.8.3.min.js"></script>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script src="js/yongle.js"></script>
@@ -156,6 +158,21 @@
         audio.play();
         document.addEventListener("touchstart",play, false);
     }
+
+    function gamePlay(){
+        var musicGame = $('#musicGame')[0];
+        musicGame.volume=0;
+        musicGame.muted=true;
+        var play = function(){
+                    musicGame.play();
+                    document.removeEventListener("touchstart",play, false);
+                };
+        musicGame.volume=0;
+        musicGame.muted=true;
+        musicGame.play();
+        document.addEventListener("touchstart",play, false);
+    }
+    gamePlay();
     var isAppInside=/micromessenger/i.test(navigator.userAgent.toLowerCase())||/yixin/i.test(navigator.userAgent.toLowerCase());
 </script>
 </body>
