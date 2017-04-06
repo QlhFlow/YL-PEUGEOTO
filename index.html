@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -58,7 +59,16 @@
         <img src="img/p-big-03.png" class="record03" id="moveicon03"/>
 
     </div>
+    <!--活动信息页-->
     <div class="ending" id="ending">
+        <img src="img/gogogo.png" alt="" class="go-bg"/>
+        <img src="img/write01.png" alt="" class="write01"/>
+        <img src="img/write02.png" alt="" class="write02"/>
+        <img src="img/write03.png" alt="" class="write03"/>
+        <img src="img/join.png" alt="" class="join" id="join"/>
+    </div>
+    <!--注册页-->
+    <div class="userEnd" id="userEnd">
         <div  class="userInfo-box" >
             <div class="input-title"><i><span>好</span>礼相送！预约试驾</i></div>
             <p class="userInfo-tip">即日起至2017年4月21日，凡在线成功填写预约试驾表单的用户，即有机会赢取精美好礼一份！</p>
@@ -80,21 +90,24 @@
                         <option value="62">3008</option>
                         <option value="63">2008</option>
                     </select>
-                    <!--<em></em>-->
+                    <em class="select-icon"></em>
                 </li>
                 <li class="province-city">
                     <select id="ddlProvince" name="ddlProvince" class="ddlProvince" title="省/00" >
                         <option value="-1">选择省份</option>
                     </select>
+                    <em class="select-icon select-province"></em>
                     <select id="ddlCity" name="ddlCity" class="ddlCity">
                         <option value="-1">选择城市</option>
                     </select>
+                    <em class="select-icon"></em>
                 </li>
                 <li>
                     <span>经销商</span>
                     <select id="agency" name="agency" >
                         <option value="-1">选择经销商</option>
                     </select>
+                    <em class="select-icon"></em>
                 </li>
             </ul>
             <div class="btn-userInfo"><p  id="btn-userInfo" >提&nbsp;&nbsp;&nbsp;交</p></div>

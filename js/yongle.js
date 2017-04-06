@@ -515,9 +515,19 @@ p.nominalBounds = new cjs.Rectangle(63,64,552.2,552.2);
 		this.button_1.addEventListener("click", fl_ClickToGoToWebPage);
 		
 		function fl_ClickToGoToWebPage() {
-			
+			if(!navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/)){
+		        $('.btn-music').css('opacity','0');
+		    }
 			$('#animation_container').hide();
 			$('#ending').show();
+			$('.write01').addClass("write01-fadeIn");
+			$('.write02').addClass("write02-fadeIn");
+			$('.write03').addClass("write03-fadeIn");
+			$(".join").addClass("join-bounceIn");
+			var timer = setTimeout(function(){
+				$(".join").addClass("join-click");
+			},3000);
+			
 		}
 	}
 	this.frame_154 = function() {

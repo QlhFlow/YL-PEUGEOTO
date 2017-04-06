@@ -238,7 +238,9 @@ $(function(){
     $('#page01').bind('touchmove',function(e){
         e.preventDefault();
     });
-
+    $('#join').unbind('click').bind('click',function(){
+        $('#userEnd').show();
+    });
     function puzzleStart(moveID,puzzleID){
         $('#'+moveID).unbind('touchmove').bind('touchmove',function(e){
             e.preventDefault();
@@ -263,11 +265,11 @@ $(function(){
             var bgX = parseFloat($('#bgpuzzle').css('left'));
             var bgY = parseFloat($('#bgpuzzle').css('top'));
             if(moveID=='moveicon01'){
-                $(this).attr('src','img/p-big-move-01.png');
+                $(this).attr('src','img/p-big-move-0102.png');
             }else if(moveID=='moveicon02'){
-                $(this).attr('src','img/p-big-move-02.png');
+                $(this).attr('src','img/p-big-move-0202.png');
             }else if(moveID=='moveicon03'){
-                $(this).attr('src','img/p-big-move-03.png');
+                $(this).attr('src','img/p-big-move-0302.png');
             }
             $('.hand').fadeOut();
             var musicGame = document.getElementById('musicGame');

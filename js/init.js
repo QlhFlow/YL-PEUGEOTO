@@ -65,7 +65,7 @@ function ImgLoadingByFile(imgArray,innerPageID,loadPageID,loadTxtID){
         var timer = setTimeout(function(){
             $('#'+loadPageID).hide();
             clearTimeout(timer);
-        },500);
+        },300);
 
         //$('#'+innerPageID).fadeIn();
     }else{
