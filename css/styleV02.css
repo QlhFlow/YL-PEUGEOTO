@@ -286,27 +286,27 @@ body {
   top: 0;
 }
 .ending .write01 {
-  width: 8.2rem;
-  height: 2.96rem;
+  width: 8.16rem;
+  height: 2.89333333rem;
   position: absolute;
-  left: 0.89333333rem;
-  bottom: 7.36rem;
+  left: 0.92rem;
+  bottom: 7.8rem;
   opacity: 0;
 }
 .ending .write02 {
-  width: 8.2rem;
-  height: 2.32rem;
+  width: 8.16rem;
+  height: 2.26666667rem;
   position: absolute;
-  left: 0.89333333rem;
-  bottom: 4.88rem;
+  left: 0.92rem;
+  bottom: 5.32rem;
   opacity: 0;
 }
 .ending .write03 {
-  width: 8.2rem;
-  height: 2.32rem;
+  width: 8.16rem;
+  height: 2.73333333rem;
   position: absolute;
-  left: 0.89333333rem;
-  bottom: 2.4rem;
+  left: 0.92rem;
+  bottom: 2.38666667rem;
   opacity: 0;
 }
 .ending .write01-fadeIn {

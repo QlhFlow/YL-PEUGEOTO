@@ -195,9 +195,9 @@ $(function(){
         './img/text001.png',
         './img/text002.png',
         './img/text003.png',
-        './img/write01.png',
-        './img/write02.png',
-        './img/write03.png',
+        './img/write0101.png',
+        './img/write0202.png',
+        './img/write0303.png',
         './img/x-p.png'
     ];
     ImgLoadingByFile(imgFile,'page01','loadingPage','img-loading-txt');
@@ -258,10 +258,8 @@ $(function(){
         e.preventDefault();
     });
     $('#join').unbind('click').bind('click',function(){
+        window.removeEventListener("resize",onResize,false);
         $('#userEnd').show();
-        if(!navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/)){
-            window.removeEventListener("resize");
-        }
     });
     function puzzleStart(moveID,puzzleID){
         $('#'+moveID).unbind('touchmove').bind('touchmove',function(e){

@@ -530,10 +530,16 @@ p.nominalBounds = new cjs.Rectangle(63,64,552.2,552.2);
 		}
 	}
 	this.frame_53 = function() {
-		musicStar.pause();
-		musicStar.src='video/FlyBoy000.mp3';
-		//musicStar.load();
-		musicStar.play();
+		if(musicStar.paused){
+			console.log(444);
+			musicStar.src='video/FlyBoy000.mp3';
+		}else{
+			musicStar.pause();
+			musicStar.src='video/FlyBoy000.mp3';
+			//musicStar.load();
+			musicStar.play();
+		}
+
 	}
 	this.frame_154 = function() {
 		this.stop();
