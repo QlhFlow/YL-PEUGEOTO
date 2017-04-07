@@ -616,66 +616,66 @@ body {
 }
 @keyframes joinClick {
   0% {
-    -webkit-transform: scale(1, 1, 1);
-    transform: scale(1, 1, 1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
   2.5%,
   5% {
-    -webkit-transform: scale(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -2deg);
-    transform: scale(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -2deg);
+    -webkit-transform: scale(0.95) rotate3d(0, 0, 1, -2deg);
+    transform: scale(0.95) rotate3d(0, 0, 1, -2deg);
   }
   7.5%,
   12.5%,
   17.5%,
   22.5% {
-    -webkit-transform: scale(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 2deg);
-    transform: scale(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 2deg);
+    -webkit-transform: scale(1.05) rotate3d(0, 0, 1, 2deg);
+    transform: scale(1.05) rotate3d(0, 0, 1, 2deg);
   }
   10%,
   15%,
   20% {
-    -webkit-transform: scale(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -2deg);
-    transform: scale(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -2deg);
+    -webkit-transform: scale(1.05) rotate3d(0, 0, 1, -2deg);
+    transform: scale(1.05) rotate3d(0, 0, 1, -2deg);
   }
   25% {
-    -webkit-transform: scale(1, 1, 1);
-    transform: scale(1, 1, 1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(1, 1, 1);
-    transform: scale(1, 1, 1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 @-webkit-keyframes joinClick {
   0% {
-    -webkit-transform: scale(1, 1, 1);
-    transform: scale(1, 1, 1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
   2.5%,
   5% {
-    -webkit-transform: scale(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -2deg);
-    transform: scale(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -2deg);
+    -webkit-transform: scale(0.95) rotate3d(0, 0, 1, -2deg);
+    transform: scale(0.95) rotate3d(0, 0, 1, -2deg);
   }
   7.5%,
   12.5%,
   17.5%,
   22.5% {
-    -webkit-transform: scale(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 2deg);
-    transform: scale(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 2deg);
+    -webkit-transform: scale(1.05) rotate3d(0, 0, 1, 2deg);
+    transform: scale(1.05) rotate3d(0, 0, 1, 2deg);
   }
   10%,
   15%,
   20% {
-    -webkit-transform: scale(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -2deg);
-    transform: scale(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -2deg);
+    -webkit-transform: scale(1.05) rotate3d(0, 0, 1, -2deg);
+    transform: scale(1.05) rotate3d(0, 0, 1, -2deg);
   }
   25% {
-    -webkit-transform: scale(1, 1, 1);
-    transform: scale(1, 1, 1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(1, 1, 1);
-    transform: scale(1, 1, 1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 /***表单页***/
