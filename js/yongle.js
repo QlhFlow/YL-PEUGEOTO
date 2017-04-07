@@ -531,8 +531,10 @@ p.nominalBounds = new cjs.Rectangle(63,64,552.2,552.2);
 	}
 	this.frame_53 = function() {
 		if(musicStar.paused){
-			console.log(444);
+			//console.log(444);
+			musicStar.pause();
 			musicStar.src='video/FlyBoy000.mp3';
+			musicStar.pause();
 		}else{
 			musicStar.pause();
 			musicStar.src='video/FlyBoy000.mp3';
