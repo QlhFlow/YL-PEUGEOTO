@@ -259,6 +259,9 @@ $(function(){
     });
     $('#join').unbind('click').bind('click',function(){
         $('#userEnd').show();
+        if(!navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/)){
+            window.removeEventListener("resize");
+        }
     });
     function puzzleStart(moveID,puzzleID){
         $('#'+moveID).unbind('touchmove').bind('touchmove',function(e){
