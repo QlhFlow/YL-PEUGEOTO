@@ -2,7 +2,7 @@
  * Created by luhao on 2017/3/13.
  */
 (function ($){
-	var url = "https://h5.qlh520.top/weixin/jssdk/wx_token.php";
+	var url = "https://h5.xingyuanauto.com/weixin_serve/jssdk/wx_token.php";
 	$.post(url,function(msg){
 		if(msg.start == 0){ 
           return alert(msg.message);
