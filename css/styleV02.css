@@ -217,21 +217,9 @@ body {
 }
 /**横屏**/
 @media screen and (orientation: landscape) {
-  .page-box {
-    display: none;
-  }
-  .page-landscape {
-    display: block;
-  }
 }
 /**竖屏**/
 @media screen and (orientation: portrait) {
-  .page-box {
-    display: block;
-  }
-  .page-landscape {
-    display: none;
-  }
 }
 /**音乐播放**/
 .btn-music {

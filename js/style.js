@@ -258,7 +258,12 @@ $(function(){
         e.preventDefault();
     });
     $('#join').unbind('click').bind('click',function(){
-        window.removeEventListener("resize",onResize,false);
+
+        if (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+            window.removeEventListener("orientationchange",onResize,false);
+        }else{
+            window.removeEventListener("resize",onResize,false);
+        }
         $('#userEnd').show();
     });
     function puzzleStart(moveID,puzzleID){
@@ -484,9 +489,6 @@ function portrait02(){
        $('#animation_container').css({'width':w,'height':ih+'px'});
        $('#canvas').css({'width':w,'height':ih});
        $('#dom_overlay_container').css({'width':w,'height':ih});
-
-
-
 }
 (function() {
     "use strict";
