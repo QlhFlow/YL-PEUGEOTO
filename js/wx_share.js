@@ -2,7 +2,7 @@
  * Created by luhao on 2017/3/13.
  */
 (function ($){
-	var url = "http://h5.qlh520.top/weixin/jssdk/wx_token.php";
+	var url = "https://h5.qlh520.top/weixin/jssdk/wx_token.php";
 	$.post(url,function(msg){
 		if(msg.start == 0){ 
           return alert(msg.message);
@@ -10,7 +10,7 @@
 			var title ='奏响X乐章 开启美好生活'; // 分享标题
             var link ='https://h5.xingyuanauto.com/Dongbiao/DbYongle/index.html';
             var desc = '东风标致X008盛会 福利由你开启'; // 分享描述
-            var imgUrl = 'http://h5.xingyuanauto.com/Dongbiao/DbYongle/share-icon.jpg';
+            var imgUrl = 'https://h5.xingyuanauto.com/Dongbiao/DbYongle/img/share-icon.jpg';
 		    var wx_appId = msg.appId; 
 			var wx_timestamp = msg.timestamp;
 			var wx_nonceStr = msg.nonceStr;
