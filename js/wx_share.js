@@ -4,18 +4,18 @@
 (function ($){
 	var url = "https://h5.xingyuanauto.com/weixin_serve/jssdk/wx_token.php";
 	$.post(url,function(msg){
-		if(msg.start == 0){ 
+		if(msg.start == 0){
           return alert(msg.message);
         }
 			var title ='奏响X乐章 开启美好生活'; // 分享标题
             var link ='https://h5.xingyuanauto.com/Dongbiao/DbYongle/index.html';
             var desc = '东风标致X008盛会 福利由你开启'; // 分享描述
             var imgUrl = 'https://h5.xingyuanauto.com/Dongbiao/DbYongle/img/share-icon.jpg';
-		    var wx_appId = msg.appId; 
+		    var wx_appId = msg.appId;
 			var wx_timestamp = msg.timestamp;
 			var wx_nonceStr = msg.nonceStr;
 			var wx_signature = msg.signature;
-		
+
 		     /*
              * 注意：
              * 1. 所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
@@ -42,10 +42,10 @@
                     'onMenuShareWeibo'//分享到腾讯微博
                 ]
             });
-           
+
 		   wx.ready(function () {
                 // 在这里调用 API
-				
+
 				//分享到朋友圈
                 wx.onMenuShareTimeline({
                     title:title, // 分享标题
@@ -59,7 +59,7 @@
                         // 用户取消分享后执行的回调函数
                     }
                 });
-				
+
 				//分享到朋友
 				wx.onMenuShareAppMessage({
                     title: title, // 分享标题
@@ -75,7 +75,7 @@
                         // 用户取消分享后执行的回调函数
                     }
                 });
-				
+
                 //分享到QQ
 				wx.onMenuShareQQ({
                     title: title, // 分享标题
@@ -89,21 +89,21 @@
                         // 用户取消分享后执行的回调函数
                     }
                 });
-				
+
 				//分享到QQ空间
 				wx.onMenuShareQZone({
 					title: title, // 分享标题
 					desc: desc, // 分享描述
 					link: link, // 分享链接
 					imgUrl: imgUrl, // 分享图标
-					success: function () { 
+					success: function () {
 					   // 用户确认分享后执行的回调函数
 					},
-					cancel: function () { 
+					cancel: function () {
 						// 用户取消分享后执行的回调函数
 					}
 				});
-				
+
 				//分享到腾讯微博
                 wx.onMenuShareWeibo({
                     title: title, // 分享标题
@@ -119,8 +119,8 @@
                 });
 
             });
-			
+
 	},'json')
-       
+
 
 })(jQuery);
