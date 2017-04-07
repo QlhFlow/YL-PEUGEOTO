@@ -8,8 +8,18 @@ var SaveInfo = {
     city:null,
     agency:null,
     cartype:null,
+    key:null,
     init:function(){
-        this.updateView();
+        $.ajax({
+            type:'get',
+            url:'https://fld.xingyuanauto.com/public/index.php/port/Aes/GetEncrypt',
+            success:function(key){
+                if(key){
+                    SaveInfo.key = key;
+                    SaveInfo.updateView();
+                }
+            }
+        });
     },
     updateView:function(){
         SaveInfo.inputReg();
@@ -90,7 +100,7 @@ var SaveInfo = {
         $('#btn-userInfo').bind('click',function(e){
             e.preventDefault();
             var key = $("input[name='key']").val();
-            if(SaveInfo.clickReg()&&key){
+            if(SaveInfo.clickReg()){
                 SaveInfo.username = $('input[name="username"]').val();
                 SaveInfo.phone = $('input[name="phone"]').val();
                 SaveInfo.province = $('select[name="ddlProvince"] option:selected').val();
@@ -102,7 +112,7 @@ var SaveInfo = {
                     numberphone:SaveInfo.phone,
                     dealer:SaveInfo.province+','+SaveInfo.city+','+SaveInfo.agency,
                     model:SaveInfo.cartype,
-                    key:key,
+                    key:SaveInfo.key,
                     source:1
                 };
                 $.ajax({
@@ -162,15 +172,17 @@ $(function(){
         './img/b-bg02.png',
         './img/b-bg03.png',
         './img/close-icon.png',
+        './img/gogogo.jpg',
         './img/hand.png',
+        './img/join.png',
         './img/music-close.png',
         './img/music-open.png',
         './img/p-big-01.png',
         './img/p-big-02.png',
         './img/p-big-03.png',
-        './img/p-big-move-01.png',
-        './img/p-big-move-02.png',
-        './img/p-big-move-03.png',
+        './img/p-big-move-0102.png',
+        './img/p-big-move-0202.png',
+        './img/p-big-move-0302.png',
         './img/p-left-01.png',
         './img/p-left-02.png',
         './img/p-left-no01.png',
@@ -183,10 +195,13 @@ $(function(){
         './img/text001.png',
         './img/text002.png',
         './img/text003.png',
+        './img/write01.png',
+        './img/write02.png',
+        './img/write03.png',
         './img/x-p.png'
     ];
     ImgLoadingByFile(imgFile,'page01','loadingPage','img-loading-txt');
-
+    //获取页面宽度
     var w = window.innerWidth;
     var h = window.innerHeight;
     $('body').css({'width':w,'height':h});
@@ -212,12 +227,12 @@ $(function(){
         }
     });
     //动画开始播放音乐
-    musicStar.src="video/spring.mp3";
+    musicStar.src="video/FlyBoy.mp3";
     musicStar.load();
     musicStar.play();
     var musicGame = $('#musicGame')[0];
-    musicGame.src='video/game02.mp3';
-    musicGame.load();
+    //musicGame.src='video/game02.mp3';
+    //musicGame.load();
     $(".open").click(function(){
         musicStar.pause();
         $(this).css("display","none");
@@ -285,7 +300,6 @@ $(function(){
                 musicGame.volume=1;
                 musicGame.muted=false;
                 if(total==1){
-                    //gamePlay();
                     if (musicGame.paused) { //判读是否播放
                         musicGame.play();
                     }
@@ -341,7 +355,6 @@ $(function(){
                 }else{
                     $(this).css({'left':lw-w/2});
                 }
-
                 if(lh>windowH-h/2-(windowH-bgh)/2){
                     $(this).css({'top':windowH-h-(windowH-bgh)/2});
                 }else if(lh<h-(windowH-bgh)/2){
@@ -358,7 +371,6 @@ $(function(){
     puzzleStart('moveicon03','puzzle03');
 
 });
-
 
 /***canvas动画***/
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;

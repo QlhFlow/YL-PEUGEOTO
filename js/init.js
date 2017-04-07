@@ -58,7 +58,6 @@ function funImgLoading(containID,txtID,fnComplete) {
 //    }
 //});
 
-
 function ImgLoadingByFile(imgArray,innerPageID,loadPageID,loadTxtID){
     if(sessionStorage.getItem("pageloaded")){
         $('#'+loadTxtID).html('100%');
