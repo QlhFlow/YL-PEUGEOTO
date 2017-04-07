@@ -18,6 +18,9 @@
 </head>
 <body>
 <img src="img/share-icon.jpg" style="width:0;height:0;position: absolute;left:0;top:0;" />
+<div class="page-landscape" id="page-landscape">
+    <h3>竖屏体验更佳！</h3>
+</div>
 <div id="page-box" class="page-box">
     <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); ">
         <canvas id="canvas" width="" height="" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
@@ -150,10 +153,10 @@
     </div>
 </div>
 <!--音乐-->
-<audio src="video/FlyBoy.mp3" id="musicStar"  loop="loop" preload="auto" autoplay="autoplay"></audio>
+<audio src="video/startmusic.mp3" id="musicStar"  loop="loop" preload="auto" autoplay="autoplay"></audio>
+<!--<audio src="video/FlyBoy000.mp3" id="musicEnd"  loop="loop" preload="auto" ></audio>-->
 <audio src="video/game02.mp3" id="musicGame" preload="auto" ></audio>
 <script src="js/jquery-1.8.3.min.js"></script>
-<!--<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>-->
 <script src="js/createjs.js"></script>
 <script src="js/yongle.js"></script>
 <script src="js/init.min.js"></script>
@@ -188,6 +191,7 @@
     }
     gamePlay();
     var isAppInside=/micromessenger/i.test(navigator.userAgent.toLowerCase())||/yixin/i.test(navigator.userAgent.toLowerCase());
+
 </script>
 </body>
 </html>

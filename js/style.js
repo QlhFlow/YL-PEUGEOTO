@@ -96,10 +96,8 @@ var SaveInfo = {
         return total;
     },
     submit:function(){
-        $('#btn-userInfo').unbind('click');
-        $('#btn-userInfo').bind('click',function(e){
+        $('#btn-userInfo').unbind('click').bind('click',function(e){
             e.preventDefault();
-            var key = $("input[name='key']").val();
             if(SaveInfo.clickReg()){
                 SaveInfo.username = $('input[name="username"]').val();
                 SaveInfo.phone = $('input[name="phone"]').val();
@@ -161,13 +159,15 @@ $(function(){
         './img/loading.gif',
         './images/_5yde.png',
         './images/dfsdsf.png',
+        './images/ertdgetw.png',
+        './images/etfdgdf.png',
         './images/safaf.png',
         './images/sdfsdfs.png',
         './images/sewtsgs.png',
         './images/tgsgsg.png',
         './images/tugj.png',
+        './images/turtu.png',
         './images/tygjfgj.png',
-        './images/wetetet.png',
         './img/b-bg01.png',
         './img/b-bg02.png',
         './img/b-bg03.png',
@@ -201,6 +201,7 @@ $(function(){
         './img/x-p.png'
     ];
     ImgLoadingByFile(imgFile,'page01','loadingPage','img-loading-txt');
+    //onResize();
     //获取页面宽度
     var w = window.innerWidth;
     var h = window.innerHeight;
@@ -227,12 +228,15 @@ $(function(){
         }
     });
     //动画开始播放音乐
-    musicStar.src="video/FlyBoy.mp3";
+    musicStar.src="video/startmusic.mp3";
     musicStar.load();
     musicStar.play();
     var musicGame = $('#musicGame')[0];
     //musicGame.src='video/game02.mp3';
     //musicGame.load();
+    //musicEnd.src='video/FlyBoy000.mp3';
+    //musicEnd.load();
+    //musicEnd.load();
     $(".open").click(function(){
         musicStar.pause();
         $(this).css("display","none");
@@ -375,9 +379,17 @@ $(function(){
 /***canvas动画***/
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
+   // var iw = window.Utils.windowW();
+    //var ih=iw*1.608;
+   // var ih = window.Utils.windowH();
     canvas = document.getElementById("canvas");
     anim_container = document.getElementById("animation_container");
     dom_overlay_container = document.getElementById("dom_overlay_container");
+  // canvas.width = iw;
+  // canvas.height = ih;
+   // $('#anim_container').css({'width':iw,'height':ih});
+    //$('#canvas').css({'width':iw,'height':ih});
+    //$('#dom_overlay_container').css({'width':iw,'height':ih});
     images = images||{};
     var loader = new createjs.LoadQueue(false);
     loader.addEventListener("fileload", handleFileLoad);
@@ -439,3 +451,153 @@ function handleComplete(evt) {
     makeResponsive(true,'width',true,1);
     fnStartAnimation();
 }
+
+function landscape(){
+    //var w = window.innerWidth;
+    //var h = window.innerHeight;
+    var w = window.Utils.windowW();
+    var h = window.Utils.windowH();
+
+    $("body").css({"width":w,"height":h});
+    $('#page-landscape').css({"width":w,"height":h});
+    $('#page-box').css({"width":w,"height":h});
+    $('#page-landscape').show();
+    $('#page-box').hide();
+}
+
+
+function portrait02(){
+
+        //var w = window.innerWidth;
+        //var h = window.innerHeight;
+
+        var w = window.Utils.windowW();
+        var h = window.Utils.windowH();
+        $("body").css({"width":w,"height":h});
+        $('#page-landscape').css({"width":w,"height":h});
+        $('#page-box').css({"width":w,"height":h});
+        $('#page-landscape').hide();
+        $('#page-box').show();
+        var canvas = document.getElementById("canvas");
+        var ih = w*1.608;
+       $('#animation_container').css({'width':w,'height':ih+'px'});
+       $('#canvas').css({'width':w,'height':ih});
+       $('#dom_overlay_container').css({'width':w,'height':ih});
+
+
+
+}
+(function() {
+    "use strict";
+
+    function Utils() {
+    }
+
+    Utils.isWeiXin = function(){
+        return navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/);
+    };
+    Utils.isQQ = function(){
+        return navigator.userAgent.ua.match(/QQ\/([\d\.]+)/);
+    };
+    Utils.isQZone = function(){
+        return navigator.userAgent.ua.indexOf("Qzone/") !== -1;
+    };
+
+    Utils.isIos = function() {
+        return !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    };
+    Utils.isIPhone = function() {
+        return navigator.userAgent.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1;
+    };
+    Utils.isIpad = function() {
+        return navigator.userAgent.indexOf('iPad') > -1;
+    };
+    Utils.isAndroid = function() {
+        var u = navigator.userAgent;
+        return navigator.userAgent.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+    };
+    Utils.isMobile = function() {
+        // var u = navigator.userAgent;
+        return navigator.userAgent.match(/(iPhone|iPod|Android|ios|SymbianOS)/i) != null;
+    };
+
+    // ## 屏幕方向
+    Utils.isPortrait = function() {
+        if (!Utils.isMobile()) {
+            return true;
+        }
+        // 安卓版 微信里面 只用判断 width 和 height
+        if (Utils.isAndroid() && Utils.isWeiXin()) {
+            if (Utils.windowW() < Utils.windowH()) {
+                return true;
+            } else {
+
+                return false;
+            }
+        }
+        var orientation = window['orientation'];
+        if (orientation||orientation==0) {
+            if (orientation == 90 || orientation == -90) {
+                return false;
+            }else{
+                return true;
+            }
+        } else {
+            if (Utils.windowW() < Utils.windowH()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    };
+    // ## jquery 获取 window 的宽度
+    Utils.windowW = function() {
+        // var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        return $(window).width();
+    };
+    // ## jquery 获取 window 的高度
+    Utils.windowH = function() {
+        return $(window).height();
+    };
+    window.Utils = Utils;
+}());
+$(function(){
+    onResize();
+    if (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+        window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", onResize, false);
+    }else{
+        window.addEventListener( "resize", onResize, false);
+    }
+});
+
+function  onResize() {
+    //alert(Utils.isPortrait());
+    if(Utils.isPortrait()){
+        //alert(!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/));
+        if(!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+
+            var timer = setTimeout(function(){
+                portrait02();
+
+                clearTimeout(timer);
+            },100);
+        }else{
+            portrait02();
+        }
+    } else {
+        if(!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+            var timer = setTimeout(function(){
+                landscape();
+                clearTimeout(timer);
+            },100);
+        }else{
+            landscape();
+        }
+    }
+}
+
+
+
+
+
+

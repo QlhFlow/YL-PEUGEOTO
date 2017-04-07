@@ -197,6 +197,42 @@ body {
 .load-page .img-load-now span {
   font-size: 0.29333333rem;
 }
+.page-landscape {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+  display: none;
+}
+.page-landscape h3 {
+  font-size: 0.42666667rem;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+/**横屏**/
+@media screen and (orientation: landscape) {
+  .page-box {
+    display: none;
+  }
+  .page-landscape {
+    display: block;
+  }
+}
+/**竖屏**/
+@media screen and (orientation: portrait) {
+  .page-box {
+    display: block;
+  }
+  .page-landscape {
+    display: none;
+  }
+}
 /**音乐播放**/
 .btn-music {
   width: 0.88rem;
@@ -660,7 +696,7 @@ select {
   bottom: 0;
 }
 .action-rules {
-  padding-top: 1.33333333rem;
+  padding-top: 1.06666667rem;
   padding-left: 0.46666667rem;
   padding-right: 0.46666667rem;
   box-sizing: border-box;
