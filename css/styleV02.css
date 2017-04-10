@@ -273,12 +273,32 @@ body {
   left: 0;
   top: 0;
 }
+.ending .three {
+  width: 8.33333333rem;
+  height: 0.65333333rem;
+  position: absolute;
+  left: 0.83333333rem;
+  bottom: 10.08rem;
+  opacity: 0;
+}
+.ending img.three-show {
+  animation: threeShow 0.4s ease-in forwards;
+  -webkit-animation: threeShow 0.4s ease-in forwards;
+}
+@keyframes threeShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .ending .write01 {
   width: 8.16rem;
-  height: 2.89333333rem;
+  height: 1.94666667rem;
   position: absolute;
   left: 0.92rem;
-  bottom: 7.8rem;
+  bottom: 8.13333333rem;
   opacity: 0;
 }
 .ending .write02 {
@@ -286,28 +306,28 @@ body {
   height: 2.26666667rem;
   position: absolute;
   left: 0.92rem;
-  bottom: 5.32rem;
+  bottom: 5.66666667rem;
   opacity: 0;
 }
 .ending .write03 {
   width: 8.16rem;
-  height: 2.73333333rem;
+  height: 3.34666667rem;
   position: absolute;
   left: 0.92rem;
-  bottom: 2.38666667rem;
+  bottom: 2.13333333rem;
   opacity: 0;
 }
 .ending .write01-fadeIn {
-  animation: fadeIn  0.7s ease  forwards;
-  -webkit-animation: fadeIn  0.7s ease  forwards;
+  animation: fadeIn  0.7s ease 0.4s forwards;
+  -webkit-animation: fadeIn  0.7s ease 0.4s forwards;
 }
 .ending .write02-fadeIn {
-  animation: fadeIn  0.8s ease 0.2s forwards;
-  -webkit-animation: fadeIn  0.8s ease 0.2s forwards;
+  animation: fadeIn  0.8s ease 0.6s forwards;
+  -webkit-animation: fadeIn  0.8s ease 0.6s forwards;
 }
 .ending .write03-fadeIn {
-  animation: fadeIn  0.8s ease 0.35s forwards;
-  -webkit-animation: fadeIn  0.8s ease 0.35s forwards;
+  animation: fadeIn  0.8s ease 0.95s forwards;
+  -webkit-animation: fadeIn  0.8s ease 0.95s forwards;
 }
 @keyframes fadeIn {
   0%,
@@ -454,8 +474,8 @@ body {
   opacity: 0;
 }
 .ending .join-bounceIn {
-  animation: bounceIn  0.5s ease 1.2s forwards;
-  -webkit-animation: bounceIn  0.5s ease 1.2s forwards;
+  animation: bounceIn  0.5s ease 1.6s forwards;
+  -webkit-animation: bounceIn  0.5s ease 1.6s forwards;
 }
 .ending .join-click {
   opacity: 1;

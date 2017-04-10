@@ -181,12 +181,35 @@ html, body { position: relative;color:#333;}
       left:0;
       top:0;
     }
+    .three{
+      width:625/75rem;
+      height:49/75rem;
+      position: absolute;
+      left:62.5/75rem;
+      bottom:756/75rem;
+      opacity: 0;
+    }
+    img.three-show{
+      //opacity: 1;
+      //transition: opacity 1s ease-in;
+      //-webkit-transition: opacity 1s ease-in;
+      animation: threeShow 0.4s ease-in forwards;
+      -webkit-animation: threeShow 0.4s ease-in forwards;
+    }
+    @keyframes threeShow {
+      0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
     .write01{
       width:612/75rem;
-      height:217/75rem;
+      height:146/75rem;
       position: absolute;
       left:69/75rem;
-      bottom:585/75rem;
+      bottom:610/75rem;
       opacity: 0;
     }
 
@@ -195,28 +218,28 @@ html, body { position: relative;color:#333;}
       height:170/75rem;
       position: absolute;
       left:69/75rem;
-      bottom:399/75rem;
+      bottom:425/75rem;
       opacity: 0;
     }
     .write03{
       width:612/75rem;
-      height:205/75rem;
+      height:251/75rem;
       position: absolute;
       left:69/75rem;
-      bottom:179/75rem;
+      bottom:160/75rem;
       opacity: 0;
     }
     .write01-fadeIn{
-      animation: fadeIn  0.7s ease  forwards;
-      -webkit-animation: fadeIn  0.7s ease  forwards;
+      animation: fadeIn  0.7s ease 0.4s forwards;
+      -webkit-animation: fadeIn  0.7s ease 0.4s forwards;
     }
     .write02-fadeIn{
-      animation: fadeIn  0.8s ease 0.2s forwards;
-      -webkit-animation: fadeIn  0.8s ease 0.2s forwards;
+      animation: fadeIn  0.8s ease 0.6s forwards;
+      -webkit-animation: fadeIn  0.8s ease 0.6s forwards;
     }
     .write03-fadeIn{
-      animation: fadeIn  0.8s ease 0.35s forwards;
-      -webkit-animation: fadeIn  0.8s ease 0.35s forwards;
+      animation: fadeIn  0.8s ease 0.95s forwards;
+      -webkit-animation: fadeIn  0.8s ease 0.95s forwards;
     }
     @keyframes fadeIn {
       0%,60%,75%,90%,100%{-webkit-transition-timing-function:cubic-bezier(0.215,.610,.355,1.000);transition-timing-function:cubic-bezier(0.215,.610,.355,1.000)}
@@ -259,8 +282,8 @@ html, body { position: relative;color:#333;}
       opacity: 0;
     }
     .join-bounceIn{
-      animation: bounceIn  0.5s ease 1.2s forwards;
-      -webkit-animation: bounceIn  0.5s ease 1.2s forwards;
+      animation: bounceIn  0.5s ease 1.6s forwards;
+      -webkit-animation: bounceIn  0.5s ease 1.6s forwards;
     }
     .join-click{
       opacity: 1;

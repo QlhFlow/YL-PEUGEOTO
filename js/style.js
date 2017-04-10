@@ -195,6 +195,7 @@ $(function(){
         './img/text001.png',
         './img/text002.png',
         './img/text003.png',
+        './img/three.png',
         './img/write0101.png',
         './img/write0202.png',
         './img/write0303.png',

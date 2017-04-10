@@ -519,10 +519,13 @@ p.nominalBounds = new cjs.Rectangle(63,64,552.2,552.2);
 		    }
 		    $('#animation_container').hide();
 		    $('#ending').show();
+			$('.three').addClass("three-show");
 		    $('.write01').addClass("write01-fadeIn");
 		    $('.write02').addClass("write02-fadeIn");
 		    $('.write03').addClass("write03-fadeIn");
 		    $(".join").addClass("join-bounceIn");
+			//console.log(777);
+			//$('.three').fadeIn();
 		    var timer = setTimeout(function(){
 		        $(".join").addClass("join-click");
 				clearTimeout(timer);
