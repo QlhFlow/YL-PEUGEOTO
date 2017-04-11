@@ -120,27 +120,6 @@ html, body { position: relative;color:#333;}
     -webkit-transform: translate(-50%, -50%);
   }
 }
-
-/**横屏**/
-@media screen and (orientation: landscape) {
-  //.page-box{
-  //  display: none;
-  //}
-  //.page-landscape{
-  //  display:block;
-  //}
-
-}
-/**竖屏**/
-@media screen and (orientation: portrait) {
-  //.page-box {
-  //  display: block;
-  //}
-  //
-  //.page-landscape {
-  //  display: none;
-  //}
-}
   /**音乐播放**/
   .btn-music{width: 66/75rem; height: 66/75rem;background:rgba(0,0,0,0.3);border-radius:50%;position: absolute; top:114/75rem; right: 36/75rem;z-index: 999;}
   //.open-music{animation: music-btn 3s linear infinite; -webkit-animation: music-btn 3s linear infinite;}
@@ -190,9 +169,6 @@ html, body { position: relative;color:#333;}
       opacity: 0;
     }
     img.three-show{
-      //opacity: 1;
-      //transition: opacity 1s ease-in;
-      //-webkit-transition: opacity 1s ease-in;
       animation: threeShow 0.4s ease-in forwards;
       -webkit-animation: threeShow 0.4s ease-in forwards;
     }
@@ -451,12 +427,8 @@ html, body { position: relative;color:#333;}
     .input-form {
       box-sizing: border-box;
       width: 100%;
-      //float: left;
       li.red {
         border: 1px solid #c01c1c;
-        //-webkit-box-shadow: 0 0 2px #c01c1c;
-        //-moz-box-shadow: 0 0 2px #c01c1c;
-        //box-shadow: 0 0 2px #c01c1c;
       }
       li {
         box-sizing: border-box;
@@ -547,16 +519,12 @@ html, body { position: relative;color:#333;}
       margin-top:36/75rem;
       height:50/75rem;
       line-height: 50/75rem;
-      //background:#3569B4;
-      //-webkit-clip-path: polygon(2% 0%, 100% 0%, 98% 100%, 0% 100%);
-      //clip-path: polygon(2% 0%, 100% 0%, 98% 100%, 0% 100%);
       margin-bottom:36/75rem;
       position: relative;
       p{
         position: absolute;
         top:0;
         right:114/75rem;
-        //margin-right:114/133.4rem;
         width:396/75rem;
         height:100%;
         color:#336fb9;
@@ -566,10 +534,8 @@ html, body { position: relative;color:#333;}
       }
     }
     a#rule-icon{
-      //position: absolute;
       float:right;
       text-align: right;
-      //right:0;
       width:609/75rem;
       font-size: 20/75rem;
       color:#434343;
@@ -583,13 +549,11 @@ html, body { position: relative;color:#333;}
     width:100%;
     height:100%;
     box-sizing:border-box;
-    //padding:50/75rem;
     position: absolute;
     left:0;
     bottom:0;
   }
   .action-rules{
-    //padding:45/75rem 50/75rem;
     padding-top:80/75rem;
     padding-left: 35/75rem;
     padding-right: 35/75rem;
@@ -644,11 +608,11 @@ html, body { position: relative;color:#333;}
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     background:#fff;
-    //border: solid #E9E9E9 1px;
-    //-webkit-box-shadow:0 0 7px #ccc;
-    //-moz-box-shadow:0 0 7px #ccc;
-    //box-shadow:0 0 7px #ccc;
-    //border-radius: 10px;
+    border: solid #E9E9E9 1px;
+    -webkit-box-shadow:0 0 7px #000;
+    -moz-box-shadow:0 0 7px #000;
+    box-shadow:0 0 7px #000;
+    border-radius: 8px;
     .prize-result-info{
       box-sizing:border-box;
       position: absolute;

@@ -215,12 +215,6 @@ body {
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
 }
-/**横屏**/
-@media screen and (orientation: landscape) {
-}
-/**竖屏**/
-@media screen and (orientation: portrait) {
-}
 /**音乐播放**/
 .btn-music {
   width: 0.88rem;
@@ -941,6 +935,11 @@ select {
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   background: #fff;
+  border: solid #E9E9E9 1px;
+  -webkit-box-shadow: 0 0 7px #000;
+  -moz-box-shadow: 0 0 7px #000;
+  box-shadow: 0 0 7px #000;
+  border-radius: 8px;
 }
 .prize-result .prize-result-info {
   box-sizing: border-box;

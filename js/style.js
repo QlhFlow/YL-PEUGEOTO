@@ -217,6 +217,12 @@ $(function(){
     });
     if(navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/)){
         $('.btn-music').css('top','0.48rem');
+    }else{
+        $('.three').css('bottom',(767/75+64/75)+'rem');
+        $('.write01').css('bottom',(621/75+64/75)+'rem');
+        $('.write02').css('bottom',(428/75+64/75)+'rem');
+        $('.write03').css('bottom',(160/75+64/75)+'rem');
+        $('.join').css('bottom',(46/75+50/75)+'rem');
     }
     //自动播放音乐
     var firstTouch = true;
