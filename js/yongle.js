@@ -657,17 +657,17 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"https://h5.xingyuanauto.com/Dongbiao/DbYongle/images/_5yde.png", id:"_5yde"},
-		{src:"https://h5.xingyuanauto.com/Dongbiao/DbYongle/images/dfsdsf.png", id:"dfsdsf"},
-		{src:"https://h5.xingyuanauto.com/Dongbiao/DbYongle/images/ertdgetw.png", id:"ertdgetw"},
-		{src:"https://h5.xingyuanauto.com/Dongbiao/DbYongle/images/etfdgdf.png", id:"etfdgdf"},
-		{src:"https://h5.xingyuanauto.com/Dongbiao/DbYongle/images/safaf.png", id:"safaf"},
-		{src:"https://h5.xingyuanauto.com/Dongbiao/DbYongle/images/sdfsdfs.png", id:"sdfsdfs"},
-		{src:"https://h5.xingyuanauto.com/Dongbiao/DbYongle/images/sewtsgs.png", id:"sewtsgs"},
-		{src:"https://h5.xingyuanauto.com/Dongbiao/DbYongle/images/tgsgsg.png", id:"tgsgsg"},
-		{src:"https://h5.xingyuanauto.com/Dongbiao/DbYongle/images/tugj.png", id:"tugj"},
-		{src:"https://h5.xingyuanauto.com/Dongbiao/DbYongle/images/turtu.png", id:"turtu"},
-		{src:"https://h5.xingyuanauto.com/Dongbiao/DbYongle/images/tygjfgj.png", id:"tygjfgj"}
+		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/_5yde.png", id:"_5yde"},
+		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/dfsdsf.png", id:"dfsdsf"},
+		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/ertdgetw.png", id:"ertdgetw"},
+		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/etfdgdf.png", id:"etfdgdf"},
+		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/safaf.png", id:"safaf"},
+		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/sdfsdfs.png", id:"sdfsdfs"},
+		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/sewtsgs.png", id:"sewtsgs"},
+		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/tgsgsg.png", id:"tgsgsg"},
+		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/tugj.png", id:"tugj"},
+		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/turtu.png", id:"turtu"},
+		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/tygjfgj.png", id:"tygjfgj"}
 	],
 	preloads: []
 };

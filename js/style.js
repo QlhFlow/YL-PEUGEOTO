@@ -404,10 +404,10 @@ function init() {
     //$('#canvas').css({'width':iw,'height':ih});
     //$('#dom_overlay_container').css({'width':iw,'height':ih});
     images = images||{};
-    var loader = new createjs.LoadQueue(true,'https://xy.qichedaquan.com/Flow/DbYongle/');
+    var loader = new createjs.LoadQueue(false);
     loader.addEventListener("fileload", handleFileLoad);
     loader.addEventListener("complete", handleComplete);
-    loader.loadManifest(lib.properties.manifest);
+    //loader.loadManifest(lib.properties.manifest);
 }
 function handleFileLoad(evt) {
     if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
