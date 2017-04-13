@@ -536,11 +536,11 @@ p.nominalBounds = new cjs.Rectangle(63,64,552.2,552.2);
 		if(musicStar.paused){
 			//console.log(444);
 			musicStar.pause();
-			musicStar.src='video/FlyBoy000.mp3';
+			musicStar.src='https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/video/FlyBoy000.mp3';
 			musicStar.pause();
 		}else{
 			musicStar.pause();
-			musicStar.src='video/FlyBoy000.mp3';
+			musicStar.src='https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/video/FlyBoy000.mp3';
 			//musicStar.load();
 			musicStar.play();
 		}
