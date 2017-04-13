@@ -657,17 +657,17 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/_5yde.png", id:"_5yde"},
-		{src:"images/dfsdsf.png", id:"dfsdsf"},
-		{src:"images/ertdgetw.png", id:"ertdgetw"},
-		{src:"images/etfdgdf.png", id:"etfdgdf"},
-		{src:"images/safaf.png", id:"safaf"},
-		{src:"images/sdfsdfs.png", id:"sdfsdfs"},
-		{src:"images/sewtsgs.png", id:"sewtsgs"},
-		{src:"images/tgsgsg.png", id:"tgsgsg"},
-		{src:"images/tugj.png", id:"tugj"},
-		{src:"images/turtu.png", id:"turtu"},
-		{src:"images/tygjfgj.png", id:"tygjfgj"}
+		{src:"https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/images/_5yde.png", id:"_5yde"},
+		{src:"https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/images/dfsdsf.png", id:"dfsdsf"},
+		{src:"https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/images/ertdgetw.png", id:"ertdgetw"},
+		{src:"https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/images/etfdgdf.png", id:"etfdgdf"},
+		{src:"https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/images/safaf.png", id:"safaf"},
+		{src:"https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/images/sdfsdfs.png", id:"sdfsdfs"},
+		{src:"https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/images/sewtsgs.png", id:"sewtsgs"},
+		{src:"https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/images/tgsgsg.png", id:"tgsgsg"},
+		{src:"https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/images/tugj.png", id:"tugj"},
+		{src:"https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/images/turtu.png", id:"turtu"},
+		{src:"https://h5cdn.xingyuanauto.com/Dongbiao/DbYongle/images/tygjfgj.png", id:"tygjfgj"}
 	],
 	preloads: []
 };
