@@ -407,7 +407,7 @@ function init() {
     var loader = new createjs.LoadQueue(false);
     loader.addEventListener("fileload", handleFileLoad);
     loader.addEventListener("complete", handleComplete);
-    //loader.loadManifest(lib.properties.manifest);
+    loader.loadManifest(lib.properties.manifest);
 }
 function handleFileLoad(evt) {
     if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
