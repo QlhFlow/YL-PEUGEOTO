@@ -404,7 +404,7 @@ function init() {
     //$('#canvas').css({'width':iw,'height':ih});
     //$('#dom_overlay_container').css({'width':iw,'height':ih});
     images = images||{};
-    var loader = new createjs.LoadQueue(true);
+    var loader = new createjs.LoadQueue(false);
     loader.addEventListener("fileload", handleFileLoad);
     loader.addEventListener("complete", handleComplete);
     loader.loadManifest(lib.properties.manifest);
