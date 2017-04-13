@@ -657,17 +657,17 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/_5yde.png", id:"_5yde"},
-		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/dfsdsf.png", id:"dfsdsf"},
-		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/ertdgetw.png", id:"ertdgetw"},
-		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/etfdgdf.png", id:"etfdgdf"},
-		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/safaf.png", id:"safaf"},
-		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/sdfsdfs.png", id:"sdfsdfs"},
-		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/sewtsgs.png", id:"sewtsgs"},
-		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/tgsgsg.png", id:"tgsgsg"},
-		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/tugj.png", id:"tugj"},
-		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/turtu.png", id:"turtu"},
-		{src:"https://xy.qichedaquan.com/Flow/DbYongle/images/tygjfgj.png", id:"tygjfgj"}
+		{src:"images/_5yde.png", id:"_5yde"},
+		{src:"images/dfsdsf.png", id:"dfsdsf"},
+		{src:"images/ertdgetw.png", id:"ertdgetw"},
+		{src:"images/etfdgdf.png", id:"etfdgdf"},
+		{src:"images/safaf.png", id:"safaf"},
+		{src:"images/sdfsdfs.png", id:"sdfsdfs"},
+		{src:"images/sewtsgs.png", id:"sewtsgs"},
+		{src:"images/tgsgsg.png", id:"tgsgsg"},
+		{src:"images/tugj.png", id:"tugj"},
+		{src:"images/turtu.png", id:"turtu"},
+		{src:"images/tygjfgj.png", id:"tygjfgj"}
 	],
 	preloads: []
 };
